@@ -5,7 +5,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Toggle mobile menu on hamburger icon click
   hamburgerLabel.addEventListener("click", function () {
+    console.log("Before Toggle: ", mobileMenuCheckbox.checked);
     mobileMenuCheckbox.checked = !mobileMenuCheckbox.checked;
+    console.log("After Toggle: ", mobileMenuCheckbox.checked);
     toggleMobileMenu();
   });
 
@@ -16,6 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
       mobileMenuCheckbox.checked = false;
       toggleMobileMenu();
     });
+
+    event.stopPropagation();
+
+    console.log(mobileMenuCheckbox.checked);
   });
 
   // Toggle the mobile menu visibility
@@ -26,4 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
       nav.classList.remove("show");
     }
   }
+
+  // console.log(mobileMenuCheckbox.checked);
 });
