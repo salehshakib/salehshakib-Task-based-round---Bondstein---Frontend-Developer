@@ -14,9 +14,7 @@ useEffect(() => {
         console.error(error);
       }
     };
-
     fetchData();
-
   }, [dependency]);
 
 or we can simply fetch data and update it by using a interval
@@ -30,13 +28,9 @@ useEffect(() => {
         console.error(error);
       }
     };
-
     fetchData();
-
     const intervalId = setInterval(fetchData, 5000);
-
     return () => clearInterval(intervalId);
-
   }, []);
 
 
